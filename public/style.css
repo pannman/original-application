@@ -1,0 +1,13 @@
+.header{
+    width: 100%;
+     height: 85px;
+    
+}
+h1{
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
+.toko{
+    float: left;
+}
