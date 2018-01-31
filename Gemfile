@@ -6,6 +6,8 @@ gem 'sinatra-contrib'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'bcrypt'
+gem 'dotenv'
+gem 'cloudinary'
 
 group :development do
 gem 'sqlite3'

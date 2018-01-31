@@ -34,11 +34,27 @@
    <div class = "header">
 	<h1>パンマケーション</h1>
 	<div class="toko">
-	  <input type ="submit"  class = " tokos" value = "投稿" > 
+	  <a class = "tokos" href = "/tasks/new"><input type="submit" value="投稿"></a> 
 	</div>
    </div>
    <div class ="main">
-   	
+   	<ul>
+   		<% @tasks.each do |task| %>
+   		<li>
+   			<h1><%= task.title %></h1>
+   			<p><%= task.sentence %></p>
+   			<% unless task.img.empty? %>
+   			<p><img src="<%= task.img %>"></p>
+   			<% end %>
+   			<p><%= task.word %></p>
+   			<form action="/tasks/<%= task.id %>/delete" method="post">
+              <input type="submit" value="削除">
+              <a href="/tasks/<%= task.id %>/edit">編集</a>
+            </form>
+            <a href="/tasks/<%= task.id %>/edit"></a>
+   		</li>
+   		<% end %>
+   	</ul>
    </div>
 </body>
 </html>
