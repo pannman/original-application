@@ -42,15 +42,19 @@ get '/tasks/:id/edit' do
 end
 
 post '/tasks/:id' do
-    task = Task.find(params[:id])
-    date = params[:due_date].split('-')
+    @task = Task.find(params[:id])
+    @task.title = params[:title]
+    @task.sentence = params[:sentence]
+    @task.save
+    
+    # date = params[:due_date].split('-')
 
-    if Date.valid_date?(date[0].to_i, date[1].to_i, date[2].to_i)
-      task.title = params[:title]
-      task.due_date = Date.parse(params[:due_date])
-      task.save
-      redirect '/'
-    else
-    redirect "/tasks/#{task.id}/edit"
-  end
+    # if Date.valid_date?(date[0].to_i, date[1].to_i, date[2].to_i)
+    #   task.title = params[:title]
+    #   task.due_date = Date.parse(params[:due_date])
+    #   task.save
+    #   redirect '/'
+    # else
+    # redirect "/tasks/#{task.id}/edit"
+  redirect '/'
 end

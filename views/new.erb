@@ -1,3 +1,4 @@
+
 <div>
  <form action="/tasks" method="post" enctype="multipart/form-data">
  <div>
@@ -8,11 +9,8 @@
     <textarea name = "sentence" rows = "5" cols = "25" placeholder = "タイトル"></textarea>
    </div>
     <p><input type = "file" name = "file"></p>
-    <% @tasks.each do |task| %>
-    <% unless task.img.empty? %>
-   	<p><img src="<%= task.img %>"></p>
-   	<% end %>
-   	<% end %>
+    <!--<div class="preview" />-->
+
    <div>
     <input type="submit" value="登録">
    </div>

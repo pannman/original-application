@@ -24,6 +24,7 @@
 	
 		}
 		.main{
+	    height:20000px;
 		padding:100px 80px;
 		background-color:#f8f8ff;
 		}
@@ -49,9 +50,8 @@
    			<p><%= task.word %></p>
    			<form action="/tasks/<%= task.id %>/delete" method="post">
               <input type="submit" value="削除">
-              <a href="/tasks/<%= task.id %>/edit">編集</a>
             </form>
-            <a href="/tasks/<%= task.id %>/edit"></a>
+            <a href="/tasks/<%= task.id %>/edit">編集</a>
    		</li>
    		<% end %>
    	</ul>
